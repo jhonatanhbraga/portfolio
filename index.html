@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhonatan | Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --tag-bg: #eff6ff;
+            --tag-text: #1e40af;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --border-color: #334155;
+            --tag-bg: #172554;
+            --tag-text: #93c5fd;
+        }
+
+        [data-theme="bw"] {
+            --bg-color: #ffffff;
+            --card-bg: #ffffff;
+            --text-main: #000000;
+            --text-muted: #333333;
+            --primary: #000000;
+            --primary-hover: #333333;
+            --border-color: #000000;
+            --tag-bg: #f0f0f0;
+            --tag-text: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .max-w {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button:hover {
+            border-color: var(--primary);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .card-company {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="max-w">
+        <header>
+            <div>
+                <span style="font-weight: 600; font-size: 1.1rem;"></span>
+            </div>
+            <div class="controls">
+                <button onclick="toggleLang()" id="lang-btn"><i class="fa-solid fa-globe"></i> EN</button>
+                <button onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> <span id="theme-text">Tema</span></button>
+            </div>
+        </header>
+
+        <section>
+            <h1 id="hero-title">JHONATAN HILARIO BRAGA</h1>
+            <div class="subtitle" id="hero-subtitle">Analista de Sistemas Júnior & Desenvolvedor Full Stack </div>
+            <p id="hero-desc">Sou Analista de Sistemas Júnior na Taunay e Rocha Advogados, onde desenvolvo automações em Python para otimizar tarefas e reduzir erros. Trabalho com extração e processamento de dados, automação com Playwright e PyAutoGUI, tratamento de dados com Pandas, além de conhecimentos em n8n e power automate para automação de fluxos.Também desenvolvo projetos pessoais e soluções para outras empresas, utilizando tecnologias como React e Flask, ampliando minha experiência em desenvolvimento web, automação e criação de soluções sob medida para diferentes necessidades. Tenho como objetivo me tornar um desenvolvedor experiente, aprimorando constantemente meus conhecimentos em desenvolvimento de software, automação e bancos de dados.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://github.com/jhonatanhbraga" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/jhonatan-hilario-braga/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="exp-heading"><i class="fa-solid fa-briefcase"></i> Experiências Profissionais</h2>
+            
+            <div class="card">
+                <h3 id="job1-title">Analista de Sistemas Júnior</h3>
+                <div class="card-company">Taunay e Rocha Advogados  05/2026 - atualmente</div>
+                <p id="job1-desc">Desenvolvimento de automações em Python para otimização de fluxos, extração e processamento de dados usando Pandas, Playwright, PyAutoGUI e ferramentas de automação como n8n.</p>
+            </div>
+
+            <div class="card">
+                <h3 id="job2-title">Jovem Aprendiz - TI</h3>
+                <div class="card-company">Taunay e Rocha Advogados  07/2025 - 05/2026</div>
+                <p id="job2-desc">Desenvolvimento de automações em Python para otimização de fluxos, extração e processamento de dados usando Pandas, Playwright, PyAutoGUI e ferramentas de automação como n8n.</p>
+            </div>
+
+            <div class="card">
+                <h3>Jovem Aprendiz - Administrativo</h3>
+                <div class="card-company">Clínica Médica 06/2024 - 07/2025</div>
+                <p id="job3-desc"></p>
+            </div>
+            <div class="card">
+                <h3>Estágio - Administrativo</h3>
+                <div class="card-company">MPRJ (Ministério Público do Estado do Rio de Janeiro) 11/2020 - 11/2022</div>
+                <p id="job4-desc"></p>
+            </div>
+
+        </section>
+
+        <section>
+            <h2 id="skills-heading"><i class="fa-solid fa-code"></i> Tecnologias & Habilidades</h2>
+            <div class="skills-grid">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">React</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Playwright & PyAutoGUI</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Git & GitHub</span>
+                <span class="tag">Excel</span>
+                <span class="tag">Power Automate</span>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="edu-heading"><i class="fa-solid fa-graduation-cap"></i> Educação</h2>
+            <div class="card">
+                <h3 id="edu-title">Análise e Desenvolvimento de Sistemas</h3>
+                <div class="card-company">Universidade Veiga de Almeida (Previsão: Dezembro 2028)</div>
+                <p id="edu-desc"></p>
+            </div>
+            <div class="card">
+                <h3 id="edu-title-2">Ensino Fundamental e Médio</h3>
+                <div class="card-company">Colégio Pedro II</div>
+                <p id="edu-desc-2"></p>
+            </div>
+        </section>
+        <section>
+            <h2 id="projects-heading"><i class="fa-solid fa-gear"></i> Projetos</h2>
+            <div class="card">
+                <h3 id="project1-title"></h3>
+                <div class="card-company"><a href="https://www.linkedin.com/posts/jhonatan-hilario-braga_python-automaaexaeto-playwright-activity-7450027459627864064-A-ru/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAE_g1TwB8t-0w4Dmgvk1ncD0PR6GkpBrx68">Automação de Cadastro de Processos Jurídicos</a></div>
+                <p id="project1-desc"></p>
+            </div>
+            <div class="card">
+                <h3 id="project2-title"></h3>
+                <div class="card-company">Novos Projetos em desenvolvimento...</div>
+                <p id="project2-desc"></p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Tradução simples PT/EN
+        let currentLang = 'pt';
+        const translations = {
+            pt: {
+                subtitle: "Analista de Sistemas Júnior & Desenvolvedor Full Stack em formação",
+                desc: "Sou Analista de Sistemas Júnior na Taunay e Rocha Advogados, onde desenvolvo automações em Python para otimizar tarefas e reduzir erros. Trabalho com extração e processamento de dados, automação com Playwright e PyAutoGUI, tratamento de dados com Pandas, além de conhecimentos em n8n e Power Automate para automação de fluxos. Também desenvolvo projetos pessoais e soluções para outras empresas, utilizando tecnologias como React e Flask, ampliando minha experiência em desenvolvimento web, automação e criação de soluções sob medida para diferentes necessidades. Tenho como objetivo me tornar um desenvolvedor experiente, aprimorando constantemente meus conhecimentos em desenvolvimento de software, automação e bancos de dados.",
+                expTitle: "Experiências Profissionais",
+                job1Title: "Analista de Sistemas Júnior",
+                job1Desc: "Desenvolvimento de automações em Python para otimização de fluxos, extração e processamento de dados usando Pandas, Playwright, PyAutoGUI e ferramentas de automação como n8n.",
+                job2Title: "Jovem Aprendiz - TI",
+                job2Desc: "Desenvolvimento de automações em Python para otimização de fluxos, extração e processamento de dados usando Pandas, Playwright, PyAutoGUI e ferramentas de automação como n8n.",
+                job3Desc: "Experiência em suporte operacional, atendimento a sistemas de gestão e garantia da integridade dos fluxos de dados internos.",
+                job4Desc: "Atuação prática com suporte técnico, sistemas e processos voltados ao ambiente público e gestão de dados.",
+                skillsTitle: "Tecnologias & Habilidades",
+                eduTitleHeading: "Educação",
+                eduTitle: "Análise e Desenvolvimento de Sistemas",
+                eduDesc: "Graduação focada em engenharia de software, banco de dados, arquitetura e desenvolvimento web moderno.",
+                project1Title: "Automação de Cadastro de Processos Jurídicos",
+                project2Title: "Novos Projetos em desenvolvimento...",
+                projectsTitle: "Projetos"
+            },
+            en: {
+                subtitle: "Junior Systems Analyst & Full Stack Developer in training",
+                desc: "I am a Junior Systems Analyst at Taunay e Rocha Advogados, where I develop Python automations to optimize tasks and reduce errors. I work with data extraction and processing, automation with Playwright and PyAutoGUI, data handling with Pandas, as well as n8n and Power Automate for workflow automation. I also develop personal projects and solutions for other companies using technologies such as React and Flask, expanding my experience in web development, automation, and building tailored solutions for different needs. My goal is to become an experienced developer, continuously improving my skills in software development, automation, and databases.",
+                expTitle: "Professional Experience",
+                job1Title: "Junior Systems Analyst",
+                job2Title: "IT Apprentice",
+                job1Desc: "Development of Python automations to optimize workflows, extract and process data using Pandas, Playwright, PyAutoGUI, and automation tools such as n8n.",
+                job2Desc: "Development of Python automations to optimize workflows, extract and process data using Pandas, Playwright, PyAutoGUI, and automation tools such as n8n.",
+                job3Desc: "Experience in operational support, management systems assistance, and ensuring the integrity of internal data flows.",
+                job4Desc: "Practical experience with technical support, systems, and processes related to public administration and data management.",
+                skillsTitle: "Technologies & Skills",
+                eduTitleHeading: "Education",
+                eduTitle: "Systems Analysis and Development",
+                eduDesc: "Degree focused on software engineering, databases, architecture, and modern web development.",
+                project1Title: "Legal Process Registration Automation",
+                project2Title: "New Projects in Development...",
+                projectsTitle: "Projects"
+            }
+        };
+
+        function toggleLang() {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            document.getElementById('lang-btn').innerHTML = `<i class="fa-solid fa-globe"></i> ${currentLang.toUpperCase()}`;
+
+            document.getElementById('hero-subtitle').innerText = translations[currentLang].subtitle;
+            document.getElementById('hero-desc').innerText = translations[currentLang].desc;
+
+            document.getElementById('exp-heading').innerHTML = `<i class="fa-solid fa-briefcase"></i> ${translations[currentLang].expTitle}`;
+            document.getElementById('job1-title').innerText = translations[currentLang].job1Title;
+            document.getElementById('job2-title').innerText = translations[currentLang].job2Title;
+            document.getElementById('job1-desc').innerText = translations[currentLang].job1Desc;
+            document.getElementById('job2-desc').innerText = translations[currentLang].job2Desc;
+            document.getElementById('job3-desc').innerText = translations[currentLang].job3Desc;
+            document.getElementById('job4-desc').innerText = translations[currentLang].job4Desc;
+
+            document.getElementById('skills-heading').innerHTML = `<i class="fa-solid fa-code"></i> ${translations[currentLang].skillsTitle}`;
+
+            document.getElementById('edu-heading').innerHTML = `<i class="fa-solid fa-graduation-cap"></i> ${translations[currentLang].eduTitleHeading}`;
+            document.getElementById('edu-title').innerText = translations[currentLang].eduTitle;
+            document.getElementById('edu-desc').innerText = translations[currentLang].eduDesc;
+
+            document.getElementById('projects-heading').innerHTML = `<i class="fa-solid fa-gear"></i> ${translations[currentLang].projectsTitle}`;
+            document.getElementById('project1-title').innerText = translations[currentLang].project1Title;
+            document.getElementById('project2-title').innerText = translations[currentLang].project2Title;
+        }
+
+        // Alternância de Temas: Light -> Dark -> Preto e Branco (BW) -> Light
+        let themeState = 0;
+        function toggleTheme() {
+            const html = document.documentElement;
+            themeState = (themeState + 1) % 3;
+            
+            if (themeState === 0) {
+                html.setAttribute('data-theme', 'light');
+                document.getElementById('theme-text').innerText = 'Padrão';
+            } else if (themeState === 1) {
+                html.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-text').innerText = 'Escuro';
+            } else {
+                html.setAttribute('data-theme', 'bw');
+                document.getElementById('theme-text').innerText = 'P&B';
+            }
+        }
+    </script>
+</body>
+</html>
