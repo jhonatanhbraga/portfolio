@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -489,7 +489,7 @@
             document.getElementById('quote-text').innerText = text.quoteText;
         }
 
-        let themeState = 1;
+        let themeState = 0;
         function toggleTheme() {
             const html = document.documentElement;
             themeState = (themeState + 1) % 3;
