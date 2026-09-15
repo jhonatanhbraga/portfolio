@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -231,6 +231,7 @@
                 <span class="tag">Excel</span>
                 <span class="tag">Power Automate</span>
                 <span class="tag" id="skill-english">Inglês Avançado</span>
+                <span class="tag" id="skill-english">Javascritpt</span>
             </div>
         </section>
 
@@ -289,7 +290,6 @@
             <div class="card">
                 <h3 id="edu1-title">Análise e Desenvolvimento de Sistemas</h3>
                 <div class="card-company" id="edu1-company">Universidade Veiga de Almeida (Previsão: Dezembro 2028)</div>
-                <p id="edu1-desc">Graduação focada em engenharia de software, banco de dados, arquitetura e desenvolvimento web moderno.</p>
             </div>
             <div class="card">
                 <h3 id="edu2-title">Ensino Fundamental e Médio</h3>
@@ -363,7 +363,6 @@
                 eduHeading: "Educação",
                 edu1Title: "Análise e Desenvolvimento de Sistemas",
                 edu1Company: "Universidade Veiga de Almeida (Previsão: Dezembro 2028)",
-                edu1Desc: "Graduação focada em engenharia de software, banco de dados, arquitetura e desenvolvimento web moderno.",
                 edu2Title: "Ensino Fundamental e Médio",
                 edu2Company: "Colégio Pedro II",
                 edu3Title: "Inglês Intermediário - Avançado",
@@ -413,7 +412,7 @@
                 eduHeading: "Education",
                 edu1Title: "Systems Analysis and Development",
                 edu1Company: "Veiga de Almeida University (Expected: December 2028)",
-                edu1Desc: "Degree focused on software engineering, databases, architecture, and modern web development.",
+                edu1Desc: "",
                 edu2Title: "Elementary and High School",
                 edu2Company: "Pedro II College",
                 edu3Title: "Intermediate - Advanced English",
@@ -490,7 +489,7 @@
             document.getElementById('quote-text').innerText = text.quoteText;
         }
 
-        let themeState = 0;
+        let themeState = 1;
         function toggleTheme() {
             const html = document.documentElement;
             themeState = (themeState + 1) % 3;
